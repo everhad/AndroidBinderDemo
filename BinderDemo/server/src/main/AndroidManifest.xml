@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.idlestars.server">
+
+    <application
+        android:name="com.idlestars.server.MyApp" android:allowBackup="true" android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <service android:name="com.idlestars.server.RemoteService">
+
+            <intent-filter>
+                <action android:name="com.idlestars.remoteserver.RemoteService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
