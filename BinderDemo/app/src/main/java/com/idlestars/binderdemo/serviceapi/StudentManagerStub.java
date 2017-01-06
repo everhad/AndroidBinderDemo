@@ -34,6 +34,7 @@ public abstract class StudentManagerStub extends Binder implements IStudentManag
                 return true;
             }
         }
+
         return super.onTransact(code, data, reply, flags);
     }
 

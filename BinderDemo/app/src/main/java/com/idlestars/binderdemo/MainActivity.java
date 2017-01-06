@@ -30,14 +30,11 @@ public class MainActivity extends AppCompatActivity {
         et_stu_id = (EditText) findViewById(R.id.et_stu_id);
         tv_age = (TextView) findViewById(R.id.tv_age);
 
-
         Intent intent = new Intent(this, RemoteService.class);
         bindService(intent, connection, BIND_AUTO_CREATE);
     }
 
     public void getAge(View view) {
-        Log.d("Binder", "studentManager = " + studentManager);
-
         if (studentManager != null) {
             int stuId = Integer.valueOf(et_stu_id.getText().toString());
             try {
@@ -47,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 Log.d("Binder", "getAge Exception: " + e.getMessage());
             }
-
         }
     }
 
@@ -64,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     service.linkToDeath(new IBinder.DeathRecipient() {
                         @Override
                         public void binderDied() {
+                            studentManager = null;
                             Log.d("Binder", "binderDied");
                         }
                     }, 0);
