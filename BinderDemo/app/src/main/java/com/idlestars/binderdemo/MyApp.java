@@ -21,4 +21,9 @@ public class MyApp extends Application {
     public static String getAppName() {
         return appName;
     }
+
+    public static String getAppDescription() {
+        return "Process = " + MyApp.getProcessName()
+                + ", AppName = " + MyApp.getAppName();
+    }
 }

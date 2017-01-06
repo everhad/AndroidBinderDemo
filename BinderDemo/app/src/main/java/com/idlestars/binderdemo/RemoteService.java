@@ -24,8 +24,7 @@ public class RemoteService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.d("Binder", "onBind called. Process = " + MyApp.getProcessName()
-            + ", AppName = " + MyApp.getAppName());
+        Log.d("Binder", "onBind called. " + MyApp.getAppDescription());
 
         return mBinder;
     }

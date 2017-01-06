@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, RemoteService.class);
         bindService(intent, connection, BIND_AUTO_CREATE);
+        Log.d("Binder", "call bindService. " + MyApp.getAppDescription());
     }
 
     public void getAge(View view) {
